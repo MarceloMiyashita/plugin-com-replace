@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>Exercicio2-replace</title>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<style type="text/css">
+
+.body{
+    background-color: #00BFFF;
+}
+
+</style>
+
+<script type="text/javascript">
+            (function($) {
+
+                $.fn.mudarLetras = function() {
+
+                    this.each(function(index) {
+
+                        var texto = $(this).html();
+                        texto = texto.replace(/e/ig, 'enter');
+                        texto = texto.replace(/i/ig, 'inis');
+                        texto = texto.replace(/o/ig, 'omber');
+                        texto = texto.replace(/u/ig, 'ufter');
+                        texto = texto.replace(/a/ig, 'ais');
+                        $(this).html(texto);
+
+                    });
+
+                    return this;
+                };
+
+            }(jQuery));
+
+            $('document').ready(function() {
+
+                $('#mudar').click(function() {
+
+                    $('p').mudarLetras();
+                    
+                    $(this).unbind().attr('disabled', 'true');
+                });
+            });
+        </script>
+</head>
+   <body class="body">
+
+<p>Todos as descrições das pessoas são sobre a humanidade do atendimento, a pessoa pega no pulso, examina, olha com carinho. Então eu acho que vai ter outra coisa, que os médicos cubanos trouxeram pro brasil, um alto grau de humanidade.
+
+No meu xinélo da humildade eu gostaria muito de ver o Neymar e o Ganso. Por que eu acho que.... 11 entre 10 brasileiros gostariam. Você veja, eu já vi, parei de ver. Voltei a ver, e acho que o Neymar e o Ganso têm essa capacidade de fazer a gente olhar.
+
+Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!
+
+A população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!</p>
+
+
+  <input type="button" name="name" value="Converter texto" id="mudar">
+    </body>
+</html>
